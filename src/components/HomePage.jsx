@@ -1,6 +1,12 @@
 import { Outlet, NavLink } from "react-router-dom";
 import "./them.css";
+import { useEffect, useState } from "react";
 const Home = () => {
+
+    const [count, setCount] = useState(0);
+
+    
+
   return (
     <>
       {/* Hero Section */}
@@ -11,6 +17,13 @@ const Home = () => {
           <a href="#about" className="btn btn-primary btn-lg">Learn More</a>
         </div>
       </header>
+      <div className="container">
+        <div className="fs-2"> {count} </div>
+        <div className="d-flex gap-3">
+            <button onClick={ ()=> setCount(count+1) } className="btn btn-primary">+</button>
+            <button onClick={ ()=> setCount(count+1) } className="btn btn-danger">-</button>
+        </div>
+      </div>
         <div className="container d-flex justify-content-between p-4">
             <ul className="">
                 <li><NavLink className="sub-content" to="/" >HTML</NavLink></li>
